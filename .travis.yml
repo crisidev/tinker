@@ -4,6 +4,9 @@ language: go
 go:
   - 1.6
 
+install:
+  - go get github.com/op/go-logging
+
 script:
   - "! gofmt -l $(find . -path ./vendor -prune -o -name '*.go' -print) | read nothing"
   - go test -v -cover
