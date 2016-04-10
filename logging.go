@@ -26,7 +26,7 @@ func LogSetup() (err error) {
 	if *flagDebug {
 		outBackendLeveled.SetLevel(logging.DEBUG, "")
 	} else {
-		outBackendLeveled.SetLevel(logging.WARNING, "")
+		outBackendLeveled.SetLevel(logging.INFO, "")
 	}
 
 	if *flagLogFile != "" {
