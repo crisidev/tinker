@@ -17,6 +17,7 @@ var (
 	flagLogFile    = kingpin.Flag("log-file", "enable logging to file").Short('l').Default("").String()
 	flagConfigFile = kingpin.Flag("config-file", "config file. mainly used for testing as config file is inside git-repo").Short('c').String()
 	flagGitRepo    = kingpin.Flag("git-repo", "github repo for keys management").Required().Short('g').String()
+	flagRunSetup   = kingpin.Flag("setup", "force recreation of private and public keys").Short('s').Bool()
 )
 
 func init() {
@@ -31,5 +32,11 @@ func main() {
 	if err != nil {
 		os.Exit(1)
 	}
+	if *flagRunSetup {
+		if err = TincSetup(); err != nil {
+			os.Exit(1)
+		}
+	}
+	err = Cmd("tincd", "--help")
 	os.Exit(0)
 }
