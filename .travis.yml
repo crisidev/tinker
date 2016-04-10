@@ -6,6 +6,7 @@ go:
 
 install:
   - go get github.com/op/go-logging
+  - go get gopkg.in/alecthomas/kingpin.v2
 
 script:
   - "! gofmt -l $(find . -path ./vendor -prune -o -name '*.go' -print) | read nothing"
