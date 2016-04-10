@@ -9,7 +9,7 @@ func TestLoadConfigurationInvalidFile(t *testing.T) {
 	config := TinkerConfiguration{}
 	err := config.LoadConfig("fixtures/config.json.notexist")
 	if err == nil {
-		t.Fatalf("Expected err == nil, got %s", err)
+		t.Fatalf("Expected err =! nil, got %s", err)
 	}
 }
 
@@ -17,7 +17,7 @@ func TestLoadConfigurationInvalidJSON(t *testing.T) {
 	config := TinkerConfiguration{}
 	err := config.LoadConfig("fixtures/config.json.invalid")
 	if err == nil {
-		t.Fatalf("Expected err == nil, got %s", err)
+		t.Fatalf("Expected err =! nil, got %s", err)
 	}
 }
 
@@ -25,7 +25,7 @@ func TestLoadConfigurationOk(t *testing.T) {
 	config := TinkerConfiguration{}
 	err := config.LoadConfig("fixtures/config.json")
 	if err != nil {
-		t.Fatalf("Expected err != nil, got %s", err)
+		t.Fatalf("Expected err == nil, got %s", err)
 	}
 }
 
