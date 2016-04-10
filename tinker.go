@@ -15,7 +15,8 @@ const (
 var (
 	flagDebug      = kingpin.Flag("debug", "enable debug mode").Short('d').Bool()
 	flagLogFile    = kingpin.Flag("log-file", "enable logging to file").Short('l').Default("").String()
-	flagConfigFile = kingpin.Flag("config-file", "enable logging to file").Short('c').Default("config.json").String()
+	flagConfigFile = kingpin.Flag("config-file", "config file. mainly used for testing as config file is inside git-repo").Short('c').String()
+	flagGitRepo    = kingpin.Flag("git-repo", "github repo for keys management").Required().Short('g').String()
 )
 
 func init() {
@@ -26,7 +27,7 @@ func main() {
 	kingpin.Version(APP_VERSION)
 	kingpin.Parse()
 	config := TinkerConfiguration{}
-	err := config.LoadFromFile(*flagConfigFile)
+	err := config.LoadConfig(*flagConfigFile)
 	if err != nil {
 		os.Exit(1)
 	}
