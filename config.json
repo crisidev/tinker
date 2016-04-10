@@ -1,0 +1,25 @@
+{
+	"users": [
+	  {
+		"username": "bigo",
+		"contact_email": "bigo@crisidev.org",
+	    "address": "176.18.18.1/23",
+	    "subnets": ["192.168.0.0/24", "10.10.0.0/16"],
+	    "roadwarrior": false
+	  },
+	  {
+		"username": "uovo",
+		"contact_email": "uovobw@gmail.com",
+	    "address": "176.18.18.2/23",
+	    "subnets": [],
+	    "roadwarrior": false
+	  },
+	  {
+		"username": "bigo_laptop",
+		"contact_email": "bigo@crisidev.org",
+	    "address": "176.18.19.1/23",
+	    "subnets": [],
+	    "roadwarrior": true
+	  }
+	]
+}
