@@ -1,4 +1,4 @@
-# tinker
+# tinker [![Build Status](https://travis-ci.org/crisidev/tinker.svg)](https://travis-ci.org/crisidev/tinker)
 TINC runtime framework
 
 ## Idea
