@@ -10,5 +10,5 @@ install:
 
 script:
   - "! gofmt -l $(find . -path ./vendor -prune -o -name '*.go' -print) | read nothing"
-  - go test -v -cover
-  - go build
+  - make
+  - make run-tests

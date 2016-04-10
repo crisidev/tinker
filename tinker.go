@@ -27,12 +27,10 @@ func init() {
 func main() {
 	kingpin.Version(APP_VERSION)
 	kingpin.Parse()
-	config := TinkerConfiguration{}
-	if err := config.LoadConfig(*flagConfigFile); err != nil {
-		os.Exit(1)
-	}
-	if err := Cmd("tincd", "--help"); err != nil {
-		os.Exit(1)
-	}
+	//config := TinkerConfiguration{}
+	//err := config.LoadConfig(*flagConfigFile)
+	//if err != nil {
+	//os.Exit(1)
+	//}
 	os.Exit(0)
 }
