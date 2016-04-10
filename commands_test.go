@@ -12,13 +12,13 @@ func TestCmdOk(t *testing.T) {
 func TestCmdErrorNonFound(t *testing.T) {
 	err := Cmd("anonexistentcommand")
 	if err == nil {
-		t.Fatalf("Expected err == nil, got %s", err)
+		t.Fatalf("Expected err =! nil, got %s", err)
 	}
 }
 
 func TestCmdBadReturnCode(t *testing.T) {
 	err := Cmd("cd", "/anonexistenpath")
 	if err == nil {
-		t.Fatalf("Expected err == nil, got %s", err)
+		t.Fatalf("Expected err =! nil, got %s", err)
 	}
 }
