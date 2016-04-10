@@ -6,7 +6,9 @@ import (
 	"sync"
 )
 
-// Run binary with arguments, check for errors, log output
+// Run binary with arguments, check for errors, log output.
+// Logging is done firing a gorouting and a WaitGroup is used
+// to syncronize functions exit.
 func Cmd(cmdName string, cmdArgs ...string) (err error) {
 	var wg sync.WaitGroup
 	cmd := exec.Command(cmdName, cmdArgs...)
@@ -36,7 +38,7 @@ func Cmd(cmdName string, cmdArgs ...string) (err error) {
 	return nil
 }
 
-// Log output inside a goroutine
+// Log output reading line by line from the Scanner
 func CmdLogOutput(scanner *bufio.Scanner, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for scanner.Scan() {
